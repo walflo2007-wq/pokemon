@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokédex – PokéAPI Exercise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Pokédex</h1>
+    <form id="search-form" role="search">
+      <label for="search-input" class="sr-only">Search a Pokémon by name or number</label>
+      <input id="search-input" type="search" placeholder="Name or number, e.g. pikachu or 25" autocomplete="off" required>
+      <button type="submit">Search</button>
+    </form>
+  </header>
+
+  <main>
+    <section class="welcome">
+      <h2>Welcome, trainer!</h2>
+      <p>This page loads Pokémon live from the PokéAPI, a free REST API. Every time you open or refresh the page, a random Pokémon shows up as a card. Press “Regenerate” for another one, or use the search bar to look up any Pokémon by name or number.</p>
+      <button id="regenerate" type="button">Regenerate</button>
+    </section>
+
+    <section class="result">
+      <p id="status" role="status"></p>
+      <article id="card" class="card" hidden>
+        <span id="card-id" class="card-id"></span>
+        <div class="card-screen"><img id="card-img" alt=""></div>
+        <h3 id="card-name"></h3>
+        <dl class="stats">
+          <div><dt>Height</dt><dd id="card-height"></dd></div>
+          <div><dt>Weight</dt><dd id="card-weight"></dd></div>
+        </dl>
+        <h4>Abilities</h4>
+        <ul id="card-abilities" class="chips"></ul>
+      </article>
+    </section>
+  </main>
+
+  <footer>Data from <a href="https://pokeapi.co/">PokéAPI</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
